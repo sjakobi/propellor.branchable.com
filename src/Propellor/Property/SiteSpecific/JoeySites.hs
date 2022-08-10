@@ -23,13 +23,9 @@ import System.Posix.Files
 house :: IsContext c => User -> [Host] -> c -> (SshKeyType, Ssh.PubKeyText) -> Property (HasInfo + DebianLike)
 house user hosts ctx sshkey = propertyList "home automation" $ props
 	& Apache.installed
-	& Apt.installed ["libmodbus-dev", "rrdtool", "rsync"]
 	& Git.cloned user "https://git.joeyh.name/git/joey/house.git" d Nothing
 	& websitesymlink
 	& build
-	& Systemd.enabled setupservicename
-		`requires` setupserviceinstalled
-		`onChange` Systemd.started setupservicename
 	& Systemd.enabled pollerservicename
 		`requires` pollerserviceinstalled
 		`onChange` Systemd.started pollerservicename
@@ -123,25 +119,6 @@ house user hosts ctx sshkey = propertyList "home automation" $ props
 		, ""
 		, "[Install]"
 		, "WantedBy=multi-user.target"
-		]
-	setupservicename = "house-setup"
-	setupservicefile = "/etc/systemd/system/" ++ setupservicename ++ ".service"
-	setupserviceinstalled = setupservicefile `File.hasContent`
-		[ "[Unit]"
-		, "Description=house setup"
-		, ""
-		, "[Service]"
-		, "ExecStart=" ++ d ++ "/setup"
-		, "WorkingDirectory=" ++ d
-		, "User=root"
-		, "Group=root"
-		, "Type=oneshot"
-		, ""
-		, "[Install]"
-		, "WantedBy=multi-user.target"
-		, "WantedBy=house-poller.target"
-		, "WantedBy=house-controller.target"
-		, "WantedBy=house-watchdog.target"
 		]
 	-- Any changes to the rsync command will need my .authorized_keys
 	-- rsync server command to be updated too.
