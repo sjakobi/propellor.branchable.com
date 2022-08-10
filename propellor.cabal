@@ -55,9 +55,7 @@ Library
     CPP-Options: -DWITH_TYPE_ERRORS
 
   Exposed-Modules:
-    Propellor
     Propellor.Base
-    Propellor.DotDir
     Propellor.Location
     Propellor.Property
     Propellor.Property.Aiccu
@@ -66,19 +64,16 @@ Library
     Propellor.Property.Apt.PPA
     Propellor.Property.Atomic
     Propellor.Property.Attic
-    Propellor.Property.Bootstrap
     Propellor.Property.Borg
     Propellor.Property.Ccache
     Propellor.Property.Cmd
     Propellor.Property.Concurrent
-    Propellor.Property.Conductor
     Propellor.Property.Hostname
     Propellor.Property.Chroot
     Propellor.Property.ConfFile
     Propellor.Property.Cron
     Propellor.Property.DebianMirror
     Propellor.Property.Debootstrap
-    Propellor.Property.DiskImage
     Propellor.Property.DiskImage.PartSpec
     Propellor.Property.Dns
     Propellor.Property.DnsSec
@@ -98,20 +93,13 @@ Library
     Propellor.Property.Gpg
     Propellor.Property.Group
     Propellor.Property.Grub
-    Propellor.Property.Installer
     Propellor.Property.Installer.Types
-    Propellor.Property.Installer.Target
-    Propellor.Property.Journald
     Propellor.Property.Kerberos
-    Propellor.Property.Laptop
     Propellor.Property.LetsEncrypt
-    Propellor.Property.Libvirt
     Propellor.Property.List
     Propellor.Property.LightDM
-    Propellor.Property.Localdir
     Propellor.Property.Locale
     Propellor.Property.Logcheck
-    Propellor.Property.Lvm
     Propellor.Property.Machine
     Propellor.Property.Mount
     Propellor.Property.Network
@@ -129,7 +117,6 @@ Library
     Propellor.Property.Reboot
     Propellor.Property.Restic
     Propellor.Property.Rsync
-    Propellor.Property.Sbuild
     Propellor.Property.Scheduled
     Propellor.Property.Schroot
     Propellor.Property.Service
@@ -143,7 +130,6 @@ Library
     Propellor.Property.Unbound
     Propellor.Property.User
     Propellor.Property.Uwsgi
-    Propellor.Property.Versioned
     Propellor.Property.XFCE
     Propellor.Property.ZFS
     Propellor.Property.ZFS.Process
@@ -153,11 +139,8 @@ Library
     Propellor.Property.HostingProvider.Linode
     Propellor.Property.SiteSpecific.GitHome
     Propellor.Property.SiteSpecific.JoeySites
-    Propellor.Property.SiteSpecific.GitAnnexBuilder
-    Propellor.Property.SiteSpecific.Branchable
     Propellor.PropAccum
     Propellor.Utilities
-    Propellor.CmdLine
     Propellor.Container
     Propellor.Info
     Propellor.Message
@@ -186,15 +169,12 @@ Library
     Propellor.Types.ResultCheck
     Propellor.Types.Singletons
     Propellor.Types.ZFS
-    Propellor.Wrapper
   Other-Modules:
     Propellor.Bootstrap
     Propellor.Git
     Propellor.Git.Config
     Propellor.Git.VerifiedBranch
     Propellor.Gpg
-    Propellor.Spin
-    Propellor.Ssh
     Propellor.PrivData.Paths
     Propellor.Protocol
     Propellor.Shim
@@ -235,22 +215,3 @@ Library
     System.Console.Concurrent.Internal
     System.Process.Concurrent
     Paths_propellor
-
-Executable propellor-config
-  Default-Language: Haskell2010
-  Hs-Source-Dirs: executables
-  Main-Is: propellor-config.hs
-  GHC-Options: -threaded -Wall -fno-warn-tabs
-  Default-Extensions: TypeOperators
-  Build-Depends: propellor, base
-
-Executable propellor
-  Default-Language: Haskell2010
-  Hs-Source-Dirs: executables
-  Main-Is: wrapper.hs
-  GHC-Options: -threaded -Wall -fno-warn-tabs
-  Build-Depends: propellor, base
-
-source-repository head
-  type: git
-  location: https://git.joeyh.name/git/propellor.git
