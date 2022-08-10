@@ -55,133 +55,68 @@ Library
     CPP-Options: -DWITH_TYPE_ERRORS
 
   Exposed-Modules:
-    Propellor.Base
-    Propellor.Location
-    Propellor.Property
-    Propellor.Property.Aiccu
-    Propellor.Property.Apache
-    Propellor.Property.Apt
-    Propellor.Property.Apt.PPA
-    Propellor.Property.Atomic
-    Propellor.Property.Attic
-    Propellor.Property.Borg
-    Propellor.Property.Ccache
-    Propellor.Property.Cmd
-    Propellor.Property.Concurrent
-    Propellor.Property.Hostname
-    Propellor.Property.Chroot
-    Propellor.Property.ConfFile
-    Propellor.Property.Cron
-    Propellor.Property.DebianMirror
-    Propellor.Property.Debootstrap
-    Propellor.Property.DiskImage.PartSpec
-    Propellor.Property.Dns
-    Propellor.Property.DnsSec
-    Propellor.Property.Docker
-    Propellor.Property.EtcDefault
-    Propellor.Property.Fail2Ban
-    Propellor.Property.File
-    Propellor.Property.Firejail
-    Propellor.Property.Firewall
-    Propellor.Property.FlashKernel
-    Propellor.Property.FreeBSD
-    Propellor.Property.FreeBSD.Pkg
-    Propellor.Property.FreeBSD.Poudriere
-    Propellor.Property.FreeDesktop
-    Propellor.Property.Fstab
-    Propellor.Property.Git
-    Propellor.Property.Gpg
-    Propellor.Property.Group
-    Propellor.Property.Grub
-    Propellor.Property.Installer.Types
-    Propellor.Property.Kerberos
-    Propellor.Property.LetsEncrypt
-    Propellor.Property.List
-    Propellor.Property.LightDM
-    Propellor.Property.Locale
-    Propellor.Property.Logcheck
-    Propellor.Property.Machine
-    Propellor.Property.Mount
-    Propellor.Property.Network
-    Propellor.Property.Nginx
-    Propellor.Property.Obnam
-    Propellor.Property.Openssl
-    Propellor.Property.OS
-    Propellor.Property.Pacman
-    Propellor.Property.Parted
-    Propellor.Property.Parted.Types
-    Propellor.Property.Partition
-    Propellor.Property.Postfix
-    Propellor.Property.Prosody
-    Propellor.Property.Qemu
-    Propellor.Property.Reboot
-    Propellor.Property.Restic
-    Propellor.Property.Rsync
-    Propellor.Property.Scheduled
-    Propellor.Property.Schroot
-    Propellor.Property.Service
-    Propellor.Property.Ssh
-    Propellor.Property.Sudo
-    Propellor.Property.Systemd
-    Propellor.Property.Systemd.Core
-    Propellor.Property.Timezone
-    Propellor.Property.Tor
-    Propellor.Property.Uboot
-    Propellor.Property.Unbound
-    Propellor.Property.User
-    Propellor.Property.Uwsgi
-    Propellor.Property.XFCE
-    Propellor.Property.ZFS
-    Propellor.Property.ZFS.Process
-    Propellor.Property.ZFS.Properties
-    Propellor.Property.HostingProvider.DigitalOcean
-    Propellor.Property.HostingProvider.Exoscale
-    Propellor.Property.HostingProvider.Linode
-    Propellor.Property.SiteSpecific.GitHome
     Propellor.Property.SiteSpecific.JoeySites
-    Propellor.PropAccum
-    Propellor.Utilities
+
+    Propellor.Base
+    Propellor.Bootstrap
     Propellor.Container
-    Propellor.Info
-    Propellor.Message
     Propellor.Debug
-    Propellor.PrivData
     Propellor.Engine
     Propellor.EnsureProperty
     Propellor.Exception
+    Propellor.Git
+    Propellor.Git.Config
+    Propellor.Gpg
+    Propellor.Info
+    Propellor.Location
+    Propellor.Message
+    Propellor.PrivData
+    Propellor.PrivData.Paths
+    Propellor.PropAccum
+    Propellor.Property
+    Propellor.Property.Apache
+    Propellor.Property.Apt
+    Propellor.Property.Chroot
+    Propellor.Property.Chroot.Util
+    Propellor.Property.Cmd
+    Propellor.Property.Cron
+    Propellor.Property.Debootstrap
+    Propellor.Property.File
+    Propellor.Property.Git
+    Propellor.Property.Group
+    Propellor.Property.LetsEncrypt
+    Propellor.Property.List
+    Propellor.Property.Mount
+    Propellor.Property.Qemu
+    Propellor.Property.Service
+    Propellor.Property.Ssh
+    Propellor.Property.Systemd
+    Propellor.Property.Systemd.Core
+    Propellor.Property.User
+    Propellor.Shim
     Propellor.Types
-    Propellor.Types.Bootloader
-    Propellor.Types.ConfigurableValue
-    Propellor.Types.Core
     Propellor.Types.Chroot
     Propellor.Types.CmdLine
+    Propellor.Types.ConfigurableValue
     Propellor.Types.Container
-    Propellor.Types.Docker
+    Propellor.Types.Core
     Propellor.Types.Dns
     Propellor.Types.Empty
     Propellor.Types.Exception
     Propellor.Types.Info
     Propellor.Types.MetaTypes
     Propellor.Types.OS
-    Propellor.Types.PartSpec
     Propellor.Types.PrivData
     Propellor.Types.Result
     Propellor.Types.ResultCheck
     Propellor.Types.Singletons
     Propellor.Types.ZFS
-  Other-Modules:
-    Propellor.Bootstrap
-    Propellor.Git
-    Propellor.Git.Config
-    Propellor.Git.VerifiedBranch
-    Propellor.Gpg
-    Propellor.PrivData.Paths
-    Propellor.Protocol
-    Propellor.Shim
-    Propellor.Property.Chroot.Util
+    Propellor.Utilities
+    System.Console.Concurrent
+    System.Console.Concurrent.Internal
+    System.Process.Concurrent
     Utility.Applicative
     Utility.Data
-    Utility.DataUnits
     Utility.Directory
     Utility.Directory.Stream
     Utility.Directory.TestDirectory
@@ -191,27 +126,19 @@ Library
     Utility.Exception
     Utility.FileMode
     Utility.FileSystemEncoding
-    Utility.HumanNumber
     Utility.LinuxMkLibs
     Utility.Misc
     Utility.Monad
-    Utility.Path
     Utility.PartialPrelude
+    Utility.Path
     Utility.Process
-    Utility.Process.Shim
     Utility.Process.NonConcurrent
+    Utility.Process.Shim
     Utility.Process.Transcript
     Utility.SafeCommand
-    Utility.Scheduled
     Utility.Split
     Utility.SystemDirectory
     Utility.Table
-    Utility.ThreadScheduler
     Utility.Tmp
     Utility.Tmp.Dir
-    Utility.Tuple
     Utility.UserInfo
-    System.Console.Concurrent
-    System.Console.Concurrent.Internal
-    System.Process.Concurrent
-    Paths_propellor
